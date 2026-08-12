@@ -52,7 +52,7 @@ export default function HomePage() {
 
       <div className={styles.marquee} aria-hidden>
         <div className={styles.marqueeTrack}>
-          {[...materials, ...materials].map((item, i) => (
+          {[...materials, ...materials, ...materials, ...materials].map((item, i) => (
             <span key={`${item}-${i}`} className={styles.marqueeItem}>
               {item}
             </span>
