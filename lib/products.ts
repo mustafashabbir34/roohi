@@ -10,6 +10,8 @@ export type Product = {
   accent: string;
   accents: string[];
   shape: "bracelet" | "ring-heart" | "earrings" | "ring-butterfly" | "necklace";
+  /** Catalogue first, lifestyle second when present */
+  images?: string[];
 };
 
 export const brand = {
@@ -41,6 +43,7 @@ export const products: Product[] = [
     accent: "#7B9ECF",
     accents: ["#E8A0BF", "#F2C14E", "#7BC47F", "#7B9ECF", "#C49BFF"],
     shape: "bracelet",
+    images: ["/products/bracelet-1.png", "/products/bracelet-2.png"],
   },
   {
     id: "arsh-heart",
@@ -55,6 +58,7 @@ export const products: Product[] = [
     accent: "#E8A0BF",
     accents: ["#E8A0BF", "#F6D6E3", "#D4A017"],
     shape: "ring-heart",
+    images: ["/products/heart-ring-1.png", "/products/heart-ring-2.png"],
   },
   {
     id: "arsh-earrings",
@@ -69,6 +73,7 @@ export const products: Product[] = [
     accent: "#C49BFF",
     accents: ["#E8A0BF", "#F2C14E", "#7B9ECF", "#C49BFF"],
     shape: "earrings",
+    images: ["/products/earrings-1.png", "/products/earrings-2.png"],
   },
   {
     id: "arsh-butterfly",
@@ -97,6 +102,7 @@ export const products: Product[] = [
     accent: "#7BC47F",
     accents: ["#E8A0BF", "#7BC47F", "#7B9ECF", "#F2C14E"],
     shape: "necklace",
+    images: ["/products/necklace-1.png", "/products/necklace-2.png"],
   },
 ];
 

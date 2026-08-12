@@ -1,17 +1,18 @@
 :root {
-  --cream: #f7f1e8;
-  --cream-deep: #efe6d8;
-  --ink: #2a221c;
-  --ink-soft: #5c5248;
-  --gold: #b8923a;
-  --gold-soft: #d4a85a;
-  --blush: #e8a0bf;
-  --sapphire: #7b9ecf;
-  --lilac: #c49bff;
-  --mint: #7bc47f;
-  --paper: #fffaf4;
-  --line: rgba(42, 34, 28, 0.12);
-  --shadow: 0 24px 60px rgba(42, 34, 28, 0.08);
+  --cream: #f6efe6;
+  --cream-deep: #ebe1d2;
+  --ink: #241c17;
+  --ink-soft: #6a5e52;
+  --gold: #a8843a;
+  --gold-soft: #c9a65a;
+  --blush: #e5a4bc;
+  --sapphire: #7a9bc8;
+  --lilac: #b894e0;
+  --mint: #7bbf8a;
+  --paper: #fffcf7;
+  --line: rgba(36, 28, 23, 0.1);
+  --line-strong: rgba(36, 28, 23, 0.18);
+  --shadow: 0 30px 80px rgba(36, 28, 23, 0.08);
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-body: "Outfit", "Segoe UI", sans-serif;
   --font-script: "Caveat", cursive;
@@ -31,15 +32,27 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(232, 160, 191, 0.18), transparent 55%),
-    radial-gradient(900px 500px at 90% 0%, rgba(123, 158, 207, 0.16), transparent 50%),
-    radial-gradient(800px 500px at 70% 100%, rgba(196, 155, 255, 0.1), transparent 45%),
+    radial-gradient(1100px 640px at 8% -8%, rgba(229, 164, 188, 0.22), transparent 58%),
+    radial-gradient(980px 560px at 92% 4%, rgba(122, 155, 200, 0.18), transparent 52%),
+    radial-gradient(860px 520px at 78% 100%, rgba(184, 148, 224, 0.12), transparent 48%),
+    radial-gradient(700px 420px at 20% 85%, rgba(200, 166, 90, 0.08), transparent 50%),
     linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
   background-attachment: fixed;
   font-family: var(--font-body);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 80;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 a {
@@ -58,7 +71,7 @@ input {
 }
 
 ::selection {
-  background: rgba(184, 146, 58, 0.25);
+  background: rgba(168, 132, 58, 0.22);
 }
 
 .site-shell {
@@ -72,14 +85,14 @@ input {
 }
 
 .container {
-  width: min(1120px, calc(100% - 2.5rem));
+  width: min(1180px, calc(100% - 2.75rem));
   margin-inline: auto;
 }
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 0.72rem;
-  letter-spacing: 0.28em;
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
@@ -101,16 +114,25 @@ input {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.95rem 1.6rem;
+  padding: 1rem 1.75rem;
   border: 1px solid var(--ink);
   background: var(--ink);
   color: var(--paper);
   cursor: pointer;
-  transition: transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  transition:
+    transform 0.4s var(--ease),
+    background 0.4s var(--ease),
+    color 0.4s var(--ease),
+    border-color 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(36, 28, 23, 0.14);
 }
 
 .btn-ghost {
@@ -127,12 +149,13 @@ input {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(32px);
   }
   to {
     opacity: 1;
@@ -143,35 +166,63 @@ input {
 @keyframes shimmer {
   0%,
   100% {
-    filter: brightness(1);
+    filter: brightness(1) saturate(1);
   }
   50% {
-    filter: brightness(1.12);
+    filter: brightness(1.14) saturate(1.08);
   }
 }
 
 @keyframes drift {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes drawLine {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
 
 .rise {
-  animation: rise 1s var(--ease) both;
+  animation: rise 1.15s var(--ease) both;
 }
 
 .rise-delay-1 {
-  animation-delay: 0.12s;
+  animation-delay: 0.14s;
 }
 
 .rise-delay-2 {
-  animation-delay: 0.24s;
+  animation-delay: 0.28s;
 }
 
 .rise-delay-3 {
-  animation-delay: 0.36s;
+  animation-delay: 0.42s;
 }

@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: min(92vh, 900px);
+  min-height: min(94vh, 980px);
   display: grid;
   align-items: end;
   overflow: hidden;
@@ -17,89 +17,188 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 55% at 70% 35%, rgba(232, 160, 191, 0.28), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 20% 60%, rgba(123, 158, 207, 0.22), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 55% 80%, rgba(196, 155, 255, 0.16), transparent 50%),
-    linear-gradient(180deg, rgba(247, 241, 232, 0.2) 0%, rgba(239, 230, 216, 0.85) 100%);
+    radial-gradient(ellipse 78% 58% at 72% 32%, rgba(229, 164, 188, 0.34), transparent 62%),
+    radial-gradient(ellipse 58% 48% at 18% 58%, rgba(122, 155, 200, 0.26), transparent 58%),
+    radial-gradient(ellipse 48% 42% at 58% 82%, rgba(184, 148, 224, 0.18), transparent 52%),
+    radial-gradient(ellipse 40% 36% at 84% 70%, rgba(201, 166, 90, 0.16), transparent 55%),
+    linear-gradient(180deg, rgba(246, 239, 230, 0.15) 0%, rgba(235, 225, 210, 0.92) 100%);
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(246, 239, 230, 0.55) 0%, transparent 38%),
+    linear-gradient(0deg, rgba(235, 225, 210, 0.7) 0%, transparent 42%);
+}
+
+.orbit {
+  position: absolute;
+  width: min(58vw, 640px);
+  height: min(58vw, 640px);
+  right: -4%;
+  top: 8%;
+  border: 1px solid rgba(168, 132, 58, 0.22);
+  border-radius: 50%;
+  animation: floatSoft 14s ease-in-out infinite;
+}
+
+.orbit::before,
+.orbit::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(122, 155, 200, 0.16);
+  border-radius: 50%;
+}
+
+.orbit::after {
+  inset: 26%;
+  border-color: rgba(229, 164, 188, 0.18);
 }
 
 .gemField {
   position: absolute;
   inset: 0;
-  animation: drift 9s ease-in-out infinite;
+  animation: drift 10s ease-in-out infinite;
 }
 
 .gem {
   position: absolute;
-  width: clamp(48px, 8vw, 96px);
-  height: clamp(64px, 10vw, 120px);
-  border-radius: 50% 50% 45% 45%;
-  background: linear-gradient(160deg, color-mix(in srgb, var(--g) 85%, white), var(--g));
-  box-shadow: 0 20px 50px rgba(42, 34, 28, 0.12);
-  opacity: 0.85;
+  width: clamp(52px, 8.5vw, 110px);
+  height: clamp(70px, 11vw, 140px);
+  border-radius: 50% 50% 42% 42%;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--g) 55%, white) 0%, var(--g) 48%, color-mix(in srgb, var(--g) 70%, #241c17) 100%);
+  box-shadow:
+    inset 0 0 24px rgba(255, 255, 255, 0.35),
+    0 24px 60px rgba(36, 28, 23, 0.14);
+  opacity: 0.9;
+}
+
+.gem::after {
+  content: "";
+  position: absolute;
+  top: 14%;
+  left: 18%;
+  width: 34%;
+  height: 22%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  filter: blur(1px);
+}
+
+.gemSoft {
+  opacity: 0.45;
+  filter: blur(0.4px);
 }
 
 .gem:nth-child(1) {
-  top: 18%;
-  left: 62%;
+  top: 16%;
+  left: 60%;
   transform: rotate(-12deg);
 }
 
 .gem:nth-child(2) {
-  top: 34%;
-  left: 78%;
-  transform: rotate(8deg) scale(0.85);
+  top: 32%;
+  left: 76%;
+  transform: rotate(8deg) scale(0.88);
 }
 
 .gem:nth-child(3) {
   top: 48%;
-  left: 68%;
-  transform: rotate(-4deg) scale(0.7);
+  left: 66%;
+  transform: rotate(-4deg) scale(0.72);
 }
 
 .gem:nth-child(4) {
-  top: 28%;
+  top: 26%;
   left: 88%;
-  transform: rotate(14deg) scale(0.55);
+  transform: rotate(14deg) scale(0.58);
 }
 
 .gem:nth-child(5) {
   top: 58%;
-  left: 84%;
-  transform: rotate(-18deg) scale(0.65);
+  left: 82%;
+  transform: rotate(-18deg) scale(0.68);
+}
+
+.gem:nth-child(6) {
+  top: 68%;
+  left: 58%;
+  transform: rotate(10deg) scale(0.5);
 }
 
 .heroCopy {
-  padding-bottom: clamp(3rem, 8vh, 5.5rem);
-  padding-top: 6rem;
-  max-width: 42rem;
+  padding-bottom: clamp(3.4rem, 9vh, 6rem);
+  padding-top: 6.5rem;
+  max-width: 44rem;
 }
 
 .brand {
-  margin: 0.6rem 0 0;
-  font-size: clamp(4.5rem, 14vw, 9rem);
-  letter-spacing: 0.08em;
+  margin: 0.7rem 0 0;
+  font-size: clamp(4.8rem, 15vw, 9.6rem);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
+.goldRule {
+  width: 4.5rem;
+  height: 1px;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transform-origin: left;
+  animation: drawLine 1.2s var(--ease) 0.35s both;
+}
+
 .meaning {
-  margin: 0.35rem 0 0;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0.7rem 0 0;
+  font-size: clamp(1.95rem, 4.2vw, 2.85rem);
   color: var(--ink-soft);
 }
 
 .lead {
-  margin: 1.4rem 0 0;
+  margin: 1.55rem 0 0;
   max-width: 28rem;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   color: var(--ink-soft);
+  line-height: 1.7;
 }
 
 .cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 2rem;
+  gap: 0.85rem;
+  margin-top: 2.2rem;
+}
+
+.marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: rgba(255, 252, 247, 0.45);
+  padding: 0.95rem 0;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.marqueeItem {
+  padding: 0 1.75rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.marqueeItem::before {
+  content: "✦";
+  margin-right: 1.75rem;
+  color: var(--gold-soft);
+  font-size: 0.55rem;
 }
 
 .intro {
@@ -107,25 +206,25 @@
   justify-content: space-between;
   gap: 2rem;
   align-items: flex-end;
-  padding: 4.5rem 0 2rem;
-  border-top: 1px solid var(--line);
-  margin-top: 1rem;
+  padding: 5rem 0 2.25rem;
 }
 
 .sectionTitle {
-  margin: 0.5rem 0 0;
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  margin: 0.55rem 0 0;
+  font-size: clamp(2.6rem, 5.4vw, 4rem);
+  letter-spacing: 0.08em;
 }
 
 .sectionBody {
-  margin: 0.9rem 0 0;
+  margin: 1rem 0 0;
   max-width: 34rem;
   color: var(--ink-soft);
+  font-size: 1.02rem;
 }
 
 .hand {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   color: var(--ink-soft);
   white-space: nowrap;
 }
@@ -133,26 +232,62 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem 1.5rem;
-  padding-bottom: 4rem;
+  gap: 3rem 1.75rem;
+  padding-bottom: 4.5rem;
 }
 
-.mission {
-  padding: 4.5rem 0;
-  background: rgba(255, 250, 244, 0.55);
+.grid > *:first-child {
+  grid-column: 1 / -1;
+}
+
+.poetry {
+  padding: 5.5rem 0;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(229, 164, 188, 0.12), transparent 70%),
+    rgba(255, 252, 247, 0.35);
   border-block: 1px solid var(--line);
 }
 
+.poetryMark {
+  margin: 0;
+  font-size: 1.45rem;
+  color: var(--ink-soft);
+}
+
+.poetryText {
+  margin: 1.1rem auto 0;
+  max-width: 28rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.mission {
+  padding: 5rem 0;
+}
+
 .missionText {
-  margin: 0.8rem 0 0;
-  max-width: 40rem;
-  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
-  line-height: 1.25;
+  margin: 0.9rem 0 0;
+  max-width: 42rem;
+  font-size: clamp(1.85rem, 3.5vw, 2.7rem);
+  line-height: 1.28;
+}
+
+.missionPlace {
+  margin: 1.5rem 0 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
 @media (max-width: 800px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .grid > *:first-child {
+    grid-column: auto;
   }
 
   .intro {
@@ -165,7 +300,12 @@
   }
 
   .gem:nth-child(4),
-  .gem:nth-child(5) {
+  .gem:nth-child(5),
+  .gem:nth-child(6) {
     display: none;
+  }
+
+  .orbit {
+    opacity: 0.5;
   }
 }

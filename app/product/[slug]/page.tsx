@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/components/AddToCartButton";
-import { ProductArt } from "@/components/ProductArt";
+import { ProductGallery } from "@/components/ProductGallery";
 import { formatAed, getProduct, products } from "@/lib/products";
 import styles from "./page.module.css";
 
@@ -29,7 +29,7 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <div className={`container ${styles.layout}`}>
-      <ProductArt product={product} large />
+      <ProductGallery product={product} />
       <div className={styles.copy}>
         <p className="eyebrow">{product.collection}</p>
         <h1 className={`display ${styles.title}`}>{product.name}</h1>

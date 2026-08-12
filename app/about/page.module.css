@@ -1,36 +1,49 @@
 .header {
-  padding: 3.5rem 0 1.5rem;
+  padding: 4rem 0 1.75rem;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 4rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
 }
 
 .title {
-  margin: 0.45rem 0 0;
-  font-size: clamp(3.2rem, 8vw, 5.5rem);
-  letter-spacing: 0.1em;
+  margin: 0.5rem 0 0;
+  font-size: clamp(3.4rem, 8.5vw, 5.8rem);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .meaning {
-  margin: 0.4rem 0 0;
-  font-size: 2rem;
+  margin: 0.55rem 0 0;
+  font-size: 2.15rem;
   color: var(--ink-soft);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2.5rem;
-  padding: 1rem 0 4rem;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 3rem;
+  padding: 2rem 0 4.5rem;
   border-top: 1px solid var(--line);
+  margin-top: 1.5rem;
 }
 
 .h2 {
-  margin: 0 0 1rem;
-  font-size: 2rem;
+  margin: 0 0 1.1rem;
+  font-size: 2.15rem;
 }
 
 .grid p {
   color: var(--ink-soft);
   max-width: 38rem;
+  line-height: 1.75;
 }
 
 .list {
@@ -40,12 +53,12 @@
 }
 
 .list li {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
 }
 
 .aside {
-  margin: 1.5rem 0 0;
-  font-size: 1.5rem;
+  margin: 1.75rem 0 0;
+  font-size: 1.6rem;
   color: var(--ink-soft);
 }
 
