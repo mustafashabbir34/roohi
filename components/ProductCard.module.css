@@ -5,33 +5,28 @@
 .link {
   display: grid;
   gap: 1.15rem;
-  transition: transform 0.5s var(--ease);
-}
-
-.link:hover {
-  transform: translateY(-4px);
 }
 
 .frameWrap {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: transparent;
 }
 
 .photo {
   position: relative;
   aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 42%, rgba(255, 252, 247, 0.55), transparent 72%),
-    linear-gradient(180deg, rgba(246, 239, 230, 0.35), rgba(235, 225, 210, 0.2));
+  overflow: visible;
+  background: transparent;
+  /* Avoid isolation so studio multiply blends into page cream */
+  isolation: auto;
 }
 
 .photoImg {
   object-fit: contain;
   object-position: center;
-  padding: 4%;
-  transition: transform 0.7s var(--ease);
+  padding: 2%;
+  transition: transform 0.7s var(--ease), filter 0.7s var(--ease);
 }
 
 .studio {
@@ -39,13 +34,19 @@
 }
 
 .link:hover .photoImg {
-  transform: scale(1.025);
+  transform: scale(1.02);
+  filter: brightness(1.02);
 }
 
 .meta {
   display: grid;
   gap: 0.4rem;
   padding-inline: 0.15rem;
+  transition: transform 0.45s var(--ease);
+}
+
+.link:hover .meta {
+  transform: translateY(-3px);
 }
 
 .collection {

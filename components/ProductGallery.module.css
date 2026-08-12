@@ -7,11 +7,10 @@
   position: relative;
   aspect-ratio: 1 / 1;
   min-height: 360px;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse 75% 60% at 50% 45%, rgba(255, 252, 247, 0.5), transparent 70%),
-    linear-gradient(165deg, rgba(246, 239, 230, 0.25), rgba(235, 225, 210, 0.15));
+  overflow: visible;
+  background: transparent;
   border: 0;
+  isolation: auto;
 }
 
 .mainImg {
@@ -35,15 +34,12 @@
   aspect-ratio: 1 / 1;
   padding: 0;
   border: 0;
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255, 252, 247, 0.45), transparent 72%),
-    rgba(246, 239, 230, 0.35);
+  background: transparent;
   cursor: pointer;
-  overflow: hidden;
+  overflow: visible;
   opacity: 0.78;
-  transition:
-    opacity 0.3s var(--ease),
-    box-shadow 0.3s var(--ease);
+  isolation: auto;
+  transition: opacity 0.3s var(--ease);
 }
 
 .thumb:hover {
