@@ -1,0 +1,56 @@
+.header {
+  padding: 3.5rem 0 1.5rem;
+}
+
+.title {
+  margin: 0.45rem 0 0;
+  font-size: clamp(3.2rem, 8vw, 5.5rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.meaning {
+  margin: 0.4rem 0 0;
+  font-size: 2rem;
+  color: var(--ink-soft);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  padding: 1rem 0 4rem;
+  border-top: 1px solid var(--line);
+}
+
+.h2 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+}
+
+.grid p {
+  color: var(--ink-soft);
+  max-width: 38rem;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+}
+
+.list li {
+  margin-bottom: 0.45rem;
+}
+
+.aside {
+  margin: 1.5rem 0 0;
+  font-size: 1.5rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

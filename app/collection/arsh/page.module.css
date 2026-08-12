@@ -1,0 +1,35 @@
+.header {
+  padding: 3.5rem 0 2rem;
+  max-width: 40rem;
+}
+
+.title {
+  margin: 0.5rem 0 0;
+  font-size: clamp(3rem, 8vw, 5rem);
+  letter-spacing: 0.12em;
+}
+
+.meaning {
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.note {
+  margin: 1.25rem 0 0;
+  font-size: 1.55rem;
+  color: var(--ink-soft);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 1.5rem;
+  padding-bottom: 4rem;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

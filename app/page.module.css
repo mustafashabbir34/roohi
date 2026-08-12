@@ -1,0 +1,171 @@
+.hero {
+  position: relative;
+  min-height: min(92vh, 900px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.heroMedia {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.watercolor {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 55% at 70% 35%, rgba(232, 160, 191, 0.28), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 60%, rgba(123, 158, 207, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 55% 80%, rgba(196, 155, 255, 0.16), transparent 50%),
+    linear-gradient(180deg, rgba(247, 241, 232, 0.2) 0%, rgba(239, 230, 216, 0.85) 100%);
+}
+
+.gemField {
+  position: absolute;
+  inset: 0;
+  animation: drift 9s ease-in-out infinite;
+}
+
+.gem {
+  position: absolute;
+  width: clamp(48px, 8vw, 96px);
+  height: clamp(64px, 10vw, 120px);
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--g) 85%, white), var(--g));
+  box-shadow: 0 20px 50px rgba(42, 34, 28, 0.12);
+  opacity: 0.85;
+}
+
+.gem:nth-child(1) {
+  top: 18%;
+  left: 62%;
+  transform: rotate(-12deg);
+}
+
+.gem:nth-child(2) {
+  top: 34%;
+  left: 78%;
+  transform: rotate(8deg) scale(0.85);
+}
+
+.gem:nth-child(3) {
+  top: 48%;
+  left: 68%;
+  transform: rotate(-4deg) scale(0.7);
+}
+
+.gem:nth-child(4) {
+  top: 28%;
+  left: 88%;
+  transform: rotate(14deg) scale(0.55);
+}
+
+.gem:nth-child(5) {
+  top: 58%;
+  left: 84%;
+  transform: rotate(-18deg) scale(0.65);
+}
+
+.heroCopy {
+  padding-bottom: clamp(3rem, 8vh, 5.5rem);
+  padding-top: 6rem;
+  max-width: 42rem;
+}
+
+.brand {
+  margin: 0.6rem 0 0;
+  font-size: clamp(4.5rem, 14vw, 9rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.meaning {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--ink-soft);
+}
+
+.lead {
+  margin: 1.4rem 0 0;
+  max-width: 28rem;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-end;
+  padding: 4.5rem 0 2rem;
+  border-top: 1px solid var(--line);
+  margin-top: 1rem;
+}
+
+.sectionTitle {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+.sectionBody {
+  margin: 0.9rem 0 0;
+  max-width: 34rem;
+  color: var(--ink-soft);
+}
+
+.hand {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 1.5rem;
+  padding-bottom: 4rem;
+}
+
+.mission {
+  padding: 4.5rem 0;
+  background: rgba(255, 250, 244, 0.55);
+  border-block: 1px solid var(--line);
+}
+
+.missionText {
+  margin: 0.8rem 0 0;
+  max-width: 40rem;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  line-height: 1.25;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .hand {
+    white-space: normal;
+  }
+
+  .gem:nth-child(4),
+  .gem:nth-child(5) {
+    display: none;
+  }
+}
