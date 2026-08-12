@@ -1,0 +1,41 @@
+.root {
+  border-top: 1px solid var(--line);
+  margin-top: 1.75rem;
+}
+
+.item {
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 6rem;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.panel {
+  padding: 0 0 1.15rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.panel ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.panel li {
+  margin-bottom: 0.4rem;
+}

@@ -1,0 +1,38 @@
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 95;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: min(420px, calc(100% - 2rem));
+  padding: 0.9rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow);
+  animation: riseToast 0.35s var(--ease);
+}
+
+.toast button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+@keyframes riseToast {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

@@ -1,0 +1,167 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(36, 28, 23, 0.35);
+  cursor: pointer;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(420px, 100%);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -24px 0 60px rgba(36, 28, 23, 0.12);
+  animation: slideIn 0.35s var(--ease);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(18px);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.4rem 1.35rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.title {
+  margin: 0.35rem 0 0;
+  font-size: 1.8rem;
+}
+
+.close {
+  border: 0;
+  background: transparent;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--ink-soft);
+  padding: 0.35rem 0;
+}
+
+.empty {
+  padding: 2rem 1.35rem;
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+  color: var(--ink-soft);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1.35rem;
+  overflow: auto;
+  flex: 1;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.9rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.thumb {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  background: #fffcf7;
+  border: 1px solid var(--line);
+}
+
+.thumbImg {
+  object-fit: contain;
+  padding: 6%;
+}
+
+.meta {
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.size,
+.price {
+  margin: 0.25rem 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.65rem;
+  font-size: 0.88rem;
+}
+
+.qty button {
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+}
+
+.remove {
+  margin-left: auto;
+  width: auto !important;
+  height: auto !important;
+  border: 0 !important;
+  text-decoration: underline;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.footer {
+  padding: 1.2rem 1.35rem 1.5rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.note {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.continue {
+  width: 100%;
+}

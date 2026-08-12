@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { products } from "@/lib/products";
 import { getStripe } from "@/lib/stripe";
 
-type BodyItem = { productId: string; quantity: number };
+type BodyItem = { productId: string; quantity: number; size?: string };
 
 export async function POST(request: Request) {
   try {
@@ -21,6 +21,11 @@ export async function POST(request: Request) {
       if (!item.quantity || item.quantity < 1) {
         throw new Error(`Invalid quantity for ${product.name}`);
       }
+      if (product.needsSize && !item.size) {
+        throw new Error(`Please select a size for ${product.name}`);
+      }
+
+      const sizeLabel = item.size ? ` · Size ${item.size}` : "";
 
       return {
         quantity: item.quantity,
@@ -28,7 +33,7 @@ export async function POST(request: Request) {
           currency: "aed",
           unit_amount: product.priceAed * 100,
           product_data: {
-            name: product.name,
+            name: `${product.name}${sizeLabel}`,
             description: `${product.collection} · ${product.materials}`,
           },
         },

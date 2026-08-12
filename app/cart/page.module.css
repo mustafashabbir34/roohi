@@ -35,10 +35,24 @@
 
 .row {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 96px 1fr auto;
   gap: 1rem;
   padding: 1.4rem 0;
   border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.thumb {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  background: #fffcf7;
+  border: 1px solid var(--line);
+}
+
+.thumbImg {
+  object-fit: contain;
+  padding: 8%;
 }
 
 .name {
@@ -64,20 +78,20 @@
   align-content: start;
 }
 
-.controls label {
-  display: grid;
-  gap: 0.35rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
+.qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid var(--line);
+  padding: 0.25rem 0.4rem;
 }
 
-.controls input {
-  width: 4.5rem;
-  padding: 0.45rem 0.5rem;
-  border: 1px solid var(--line);
-  background: var(--paper);
+.qty button {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .remove {
@@ -95,6 +109,8 @@
   border: 1px solid var(--line);
   display: grid;
   gap: 1rem;
+  position: sticky;
+  top: 5.5rem;
 }
 
 .subtotal {
@@ -110,16 +126,31 @@
   color: var(--ink-soft);
 }
 
+.continue {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--ink-soft);
+}
+
 @media (max-width: 860px) {
   .layout {
     grid-template-columns: 1fr;
   }
 
   .row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 72px 1fr;
   }
 
   .controls {
+    grid-column: 1 / -1;
     justify-items: start;
+    flex-direction: row;
+  }
+
+  .summary {
+    position: static;
   }
 }

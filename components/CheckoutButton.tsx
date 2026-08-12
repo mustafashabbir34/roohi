@@ -19,6 +19,7 @@ export function CheckoutButton() {
           items: items.map((i) => ({
             productId: i.product.id,
             quantity: i.quantity,
+            size: i.size,
           })),
         }),
       });
@@ -40,8 +41,9 @@ export function CheckoutButton() {
         className="btn"
         disabled={loading || items.length === 0}
         onClick={checkout}
+        style={{ width: "100%" }}
       >
-        {loading ? "Opening checkout…" : "Checkout with Stripe"}
+        {loading ? "Opening checkout…" : "Checkout securely"}
       </button>
       {error ? (
         <p style={{ color: "#8a3b3b", marginTop: "0.75rem", maxWidth: "28rem" }}>

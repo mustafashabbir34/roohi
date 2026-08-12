@@ -4,6 +4,10 @@ import { Caveat, Cormorant_Garamond, Outfit } from "next/font/google";
 import { CartProvider } from "@/components/CartProvider";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { MiniCart } from "@/components/MiniCart";
+import { Toast } from "@/components/Toast";
+import { TrustBar } from "@/components/TrustBar";
+import { WishlistProvider } from "@/components/WishlistProvider";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -47,11 +51,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         style={fontVars}
       >
         <CartProvider>
-          <div className="site-shell">
-            <Header />
-            <main className="site-main">{children}</main>
-            <Footer />
-          </div>
+          <WishlistProvider>
+            <div className="site-shell">
+              <Header />
+              <main className="site-main">{children}</main>
+              <TrustBar />
+              <Footer />
+            </div>
+            <MiniCart />
+            <Toast />
+          </WishlistProvider>
         </CartProvider>
       </body>
     </html>

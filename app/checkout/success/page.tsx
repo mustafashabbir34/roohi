@@ -1,7 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect } from "react";
+import { useCart } from "@/components/CartProvider";
 import styles from "./page.module.css";
 
 export default function CheckoutSuccessPage() {
+  const { clear } = useCart();
+
+  useEffect(() => {
+    clear();
+  }, [clear]);
+
   return (
     <div className={`container ${styles.wrap}`}>
       <p className="eyebrow">Thank you</p>
@@ -11,9 +21,19 @@ export default function CheckoutSuccessPage() {
         Payment received. You’ll get a confirmation email from Stripe. We pack from
         Dubai with care.
       </p>
-      <Link href="/collection/arsh" className="btn">
-        Continue browsing ARSH
-      </Link>
+      <div className={styles.actions}>
+        <Link href="/collection/arsh" className="btn">
+          Continue browsing ARSH
+        </Link>
+        <a
+          className="btn btn-ghost"
+          href="https://wa.me/971500000000"
+          target="_blank"
+          rel="noreferrer"
+        >
+          WhatsApp concierge
+        </a>
+      </div>
     </div>
   );
 }

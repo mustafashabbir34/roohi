@@ -1,52 +1,61 @@
 .footer {
-  margin-top: 5.5rem;
+  margin-top: 4rem;
   border-top: 1px solid var(--line);
-  padding: 3.5rem 0 2.75rem;
-  background:
-    radial-gradient(ellipse 70% 120% at 10% 0%, rgba(229, 164, 188, 0.1), transparent 55%),
-    rgba(255, 252, 247, 0.5);
+  padding: 3.25rem 0 2.5rem;
+  background: rgba(255, 250, 244, 0.5);
 }
 
 .inner {
   display: grid;
-  gap: 1.65rem;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
 }
 
 .mark {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 2rem;
-  letter-spacing: 0.24em;
+  font-size: 1.9rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
 .note {
-  margin: 0.4rem 0 0;
-  font-size: 1.45rem;
+  margin: 0.35rem 0 0;
+  font-size: 1.4rem;
   color: var(--ink-soft);
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.4rem;
-  font-size: 0.74rem;
-  letter-spacing: 0.18em;
+.blurb {
+  margin: 1rem 0 0;
+  max-width: 28rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.cols a,
+.care {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.heading {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-.links a {
-  opacity: 0.75;
-  transition: opacity 0.25s var(--ease);
-}
-
-.links a:hover {
-  opacity: 1;
-}
-
-.copy {
-  margin: 0;
-  max-width: 36rem;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
+@media (max-width: 800px) {
+  .inner,
+  .cols {
+    grid-template-columns: 1fr;
+  }
 }
