@@ -88,6 +88,7 @@ export const products: Product[] = [
     accent: "#D4A017",
     accents: ["#D4A017", "#F5E6C8", "#7B9ECF"],
     shape: "ring-butterfly",
+    images: ["/products/butterfly-ring-1.png"],
   },
   {
     id: "arsh-necklace",
