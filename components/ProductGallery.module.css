@@ -5,15 +5,17 @@
 
 .main {
   position: relative;
-  aspect-ratio: 4 / 5;
-  min-height: 420px;
+  aspect-ratio: 1 / 1;
+  min-height: 360px;
   overflow: hidden;
   background: #fffcf7;
   border: 1px solid rgba(36, 28, 23, 0.06);
 }
 
 .mainImg {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  padding: 5%;
 }
 
 .thumbs {
@@ -24,7 +26,7 @@
 
 .thumb {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   padding: 0;
   border: 1px solid rgba(36, 28, 23, 0.08);
   background: #fffcf7;
@@ -48,11 +50,13 @@
 }
 
 .thumbImg {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  padding: 8%;
 }
 
 @media (max-width: 900px) {
   .main {
-    min-height: 320px;
+    min-height: 280px;
   }
 }
