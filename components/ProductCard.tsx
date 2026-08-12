@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { formatAed, type Product } from "@/lib/products";
+import { isStudioProductImage } from "@/lib/imageStyle";
 import { ProductArt } from "./ProductArt";
 import styles from "./ProductCard.module.css";
 
@@ -21,7 +22,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
                 alt={product.name}
                 fill
                 sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
-                className={styles.photoImg}
+                className={`${styles.photoImg} ${isStudioProductImage(primary) ? styles.studio : ""}`}
               />
             </div>
           ) : (

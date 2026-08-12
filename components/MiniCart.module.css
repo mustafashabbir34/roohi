@@ -39,7 +39,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   gap: 1rem;
   padding: 1.4rem 1.35rem 1rem;
   border-bottom: 1px solid var(--line);
@@ -89,13 +89,17 @@
   position: relative;
   width: 72px;
   height: 72px;
-  background: #fffcf7;
-  border: 1px solid var(--line);
+  background: transparent;
+  border: 0;
 }
 
 .thumbImg {
   object-fit: contain;
-  padding: 6%;
+  padding: 4%;
+}
+
+.studio {
+  mix-blend-mode: multiply;
 }
 
 .meta {

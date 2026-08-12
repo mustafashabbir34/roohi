@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { formatAed } from "@/lib/products";
+import { isStudioProductImage } from "@/lib/imageStyle";
 import { useCart } from "./CartProvider";
 import styles from "./MiniCart.module.css";
 
@@ -49,7 +50,7 @@ export function MiniCart() {
                         alt=""
                         fill
                         sizes="72px"
-                        className={styles.thumbImg}
+                        className={`${styles.thumbImg} ${isStudioProductImage(item.product.images[0]) ? styles.studio : ""}`}
                       />
                     ) : null}
                   </Link>

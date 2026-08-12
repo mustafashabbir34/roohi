@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { Product } from "@/lib/products";
+import { isStudioProductImage } from "@/lib/imageStyle";
 import { ProductArt } from "./ProductArt";
 import styles from "./ProductGallery.module.css";
 
@@ -15,6 +16,7 @@ export function ProductGallery({ product }: { product: Product }) {
   }
 
   const current = images[active] ?? images[0];
+  const studio = isStudioProductImage(current);
 
   return (
     <div className={styles.gallery}>
@@ -25,7 +27,7 @@ export function ProductGallery({ product }: { product: Product }) {
           fill
           priority
           sizes="(max-width: 900px) 100vw, 52vw"
-          className={styles.mainImg}
+          className={`${styles.mainImg} ${studio ? styles.studio : ""}`}
         />
       </div>
       {images.length > 1 && (
@@ -44,7 +46,7 @@ export function ProductGallery({ product }: { product: Product }) {
                 alt={i === 0 ? "Catalogue view" : "Lifestyle view"}
                 fill
                 sizes="120px"
-                className={styles.thumbImg}
+                className={`${styles.thumbImg} ${isStudioProductImage(src) ? styles.studio : ""}`}
               />
             </button>
           ))}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CheckoutButton } from "@/components/CheckoutButton";
 import { useCart } from "@/components/CartProvider";
 import { formatAed } from "@/lib/products";
+import { isStudioProductImage } from "@/lib/imageStyle";
 import styles from "./page.module.css";
 
 export default function CartPage() {
@@ -36,7 +37,7 @@ export default function CartPage() {
                       alt=""
                       fill
                       sizes="96px"
-                      className={styles.thumbImg}
+                      className={`${styles.thumbImg} ${isStudioProductImage(item.product.images[0]) ? styles.studio : ""}`}
                     />
                   ) : null}
                 </Link>

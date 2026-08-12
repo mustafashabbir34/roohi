@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useWishlist } from "@/components/WishlistProvider";
 import { formatAed, products } from "@/lib/products";
+import { isStudioProductImage } from "@/lib/imageStyle";
 import styles from "./page.module.css";
 
 export default function WishlistPage() {
@@ -36,7 +37,7 @@ export default function WishlistPage() {
                     alt=""
                     fill
                     sizes="110px"
-                    className={styles.thumbImg}
+                    className={`${styles.thumbImg} ${isStudioProductImage(product.images[0]) ? styles.studio : ""}`}
                   />
                 ) : null}
               </Link>

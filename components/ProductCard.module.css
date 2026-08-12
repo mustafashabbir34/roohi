@@ -9,37 +9,37 @@
 }
 
 .link:hover {
-  transform: translateY(-6px);
-}
-
-.link:hover .frameWrap {
-  box-shadow: var(--shadow);
+  transform: translateY(-4px);
 }
 
 .frameWrap {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(36, 28, 23, 0.06);
-  background: #fffcf7;
-  transition: box-shadow 0.5s var(--ease);
+  background: transparent;
 }
 
 .photo {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #fffcf7;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 42%, rgba(255, 252, 247, 0.55), transparent 72%),
+    linear-gradient(180deg, rgba(246, 239, 230, 0.35), rgba(235, 225, 210, 0.2));
 }
 
 .photoImg {
   object-fit: contain;
   object-position: center;
-  padding: 6%;
+  padding: 4%;
   transition: transform 0.7s var(--ease);
 }
 
+.studio {
+  mix-blend-mode: multiply;
+}
+
 .link:hover .photoImg {
-  transform: scale(1.02);
+  transform: scale(1.025);
 }
 
 .meta {
